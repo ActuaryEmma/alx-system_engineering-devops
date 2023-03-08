@@ -1,1 +1,1 @@
-This is documentation about shell navigation
+Task 0. Where am I?
