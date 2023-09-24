@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# display 4 and then bad luck from China, 9 and then bad luck from Japan, 17 and then bad luck from Italy
+counter=1
+while ((counter < 21))
+do
+	echo $counter
+	case $counter in
+		4)
+			echo "bad luck from China"
+			;;
+		9)
+			echo "bad luck from Japan"
+			;;
+		17)
+			echo "bad luck from Italy"
+			;;
+	esac
+	((counter++))
+done

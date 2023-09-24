@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# display bad luck for 4th loop, good luck for 8th loop and Best School for other iterations
+counter=1
+while ((counter <= 10))
+do
+	if ((counter == 4))
+	then
+		echo "bad luck"
+	elif ((counter == 8))
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((counter++))
+done
