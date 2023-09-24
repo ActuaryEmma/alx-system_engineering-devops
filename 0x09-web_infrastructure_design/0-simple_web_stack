@@ -1,0 +1,22 @@
+URL IMage: https://imgur.com/a/Ic92zxI
+
+1) What is a server?
+   	- Computer system that provide services to client over the internet. Servies such as web hoisting, database management, email servies etc
+2) What is the role of the domain name
+	- Domain name helps human remember name of a resources such as website since it might be difficult to memorize the IP addresses.
+
+3) What type of DNS record www is in www.foobar.com
+	- The type of DNS record is A record. A record maps the domain name with the IP address (www.foobar.com - 8.8.8.8)
+
+4) What is the role of the web server?
+	- receives HTTP request and reponds with a HTTP request.
+	- Software that delivers webpages and other web content over the internet
+
+5) What is the role of the application server?
+	- serves business logic to application programs.
+
+6) What is the role of the database?
+	- store organized information or data that is retrieved when application  server makes the request to database server
+
+7) What is the server using to communicate with the computer of the user requesting the website?
+	- Internet
