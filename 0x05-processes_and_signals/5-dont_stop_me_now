@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# stop infinite loop using kill command
+kill "$(ps -x | pgrep -f beyond)"
