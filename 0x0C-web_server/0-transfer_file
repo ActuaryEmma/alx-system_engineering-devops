@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Copy a single file
 # scp localmachine/path_to_the_file username@server_ip:/path_to_remote_directory
 # scp /home/emma/ALX/tests/first.js ubuntu@100.26.235.150:~
