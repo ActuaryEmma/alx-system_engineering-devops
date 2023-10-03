@@ -8,8 +8,6 @@ sudo echo "global
 	log /dev/log	local0
 	log /dev/log	local1 notice
 	chroot /var/lib/haproxy
-	stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners
-	stats timeout 30s
 	user haproxy
 	group haproxy
 	daemon
@@ -24,7 +22,6 @@ defaults
         timeout server  50000
 
 frontend techactuary
-	# maps all requests for port 80    
 	bind *:80
 	default_backend backend_techactuary
 
