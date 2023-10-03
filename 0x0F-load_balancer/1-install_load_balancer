@@ -4,7 +4,26 @@
 sudo apt -y update
 sudo apt install -y haproxy
 sudo service haproxy start
-sudo echo "frontend techactuary
+sudo echo "global
+	log /dev/log	local0
+	log /dev/log	local1 notice
+	chroot /var/lib/haproxy
+	stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners
+	stats timeout 30s
+	user haproxy
+	group haproxy
+	daemon
+
+defaults
+	log	global
+	mode	http
+	option	httplog
+	option	dontlognull
+        timeout connect 5000
+        timeout client  50000
+        timeout server  50000
+
+frontend techactuary
 	# maps all requests for port 80    
 	bind *:80
 	default_backend backend_techactuary
@@ -13,7 +32,7 @@ backend backend_techactuary
 	balance roundrobin
 	server 307299-web-01 100.26.235.150:80 check
 	server 307299-web-02 18.206.208.35:80 check
-" | sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null
+" | sudo tee /etc/haproxy/haproxy.cfg > /dev/null
 
 sudo systemctl enable haproxy
 sudo service haproxy restart
