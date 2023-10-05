@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# change nginx port from 8080 to 80, -i: tells it to edit in place. -i sed make changes to the file directly, s: indicate subtitutation operation. s/oldstring/newstring/g,,, g : perform subtitution globally. 
+
+sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
+sudo service nginx restart
