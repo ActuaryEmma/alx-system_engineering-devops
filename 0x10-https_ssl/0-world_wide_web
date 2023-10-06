@@ -9,8 +9,8 @@ if [ "$#" -eq 1 ]; then
 	print_data "$1" "www"
 	print_data "$1" "lb-01"
 	print_data "$1" "web-01"
-	print_data"$1" "web-02"
+	print_data "$1" "web-02"
 elif [ "$#" -eq 2 ]; then
-	print_data"$1" "$2"
+	print_data "$1" "$2"
 fi
 
