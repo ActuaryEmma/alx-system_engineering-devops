@@ -1,1 +1,16 @@
 #!/usr/bin/env bash
+# bash script that prints domain(first arg) and subdomain(2nd arg) information
+
+print_data(){
+	line=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | grep "$1")
+	echo "$2 $line" | awk '{print "The subdomain " $1 " is a " $5 " record and points to " $6 }'
+}
+if [ "$#" -eq 1 ]; then
+	print_data "$1" "www"
+	print_data "$1" "lb-01"
+	print_data "$1" "web-01"
+	print_data"$1" "web-02"
+elif [ "$#" -eq 2 ]; then
+	print_data"$1" "$2"
+fi
+
