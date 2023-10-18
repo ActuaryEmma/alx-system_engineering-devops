@@ -2,6 +2,8 @@
 
 `https://medium.com/@estebandelahoz/setup-a-primary-replica-infrastructure-using-mysql-5bcab77c352`
 
+`https://www.digitalocean.com/community/tutorials/how-to-set-up-replication-in-mysql`
+
 Task 0
 
 First things first, let’s get MySQL installed on both your web-01 and web-02 servers.
