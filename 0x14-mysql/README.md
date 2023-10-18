@@ -1,4 +1,7 @@
+`https://www.devart.com/dbforge/mysql/how-to-install-mysql-on-ubuntu/`
+`https://medium.com/@estebandelahoz/setup-a-primary-replica-infrastructure-using-mysql-5bcab77c352`
 Task 0
+
 First things first, let’s get MySQL installed on both your web-01 and web-02 servers.
 
     MySQL distribution must be 5.7.x
@@ -49,6 +52,8 @@ ubuntu@229-web-01:~$
 
 ***********************************************
 TASK 3
+https://medium.com/@estebandelahoz/setup-a-primary-replica-infrastructure-using-mysql-5bcab77c352
+
 Before you get started with your primary-replica synchronization, you need one more thing in place. On your primary MySQL server (web-01), create a new user for the replica server.
 
     The name of the new user should be replica_user, with the host name set to %, and can have whatever password you’d like.
