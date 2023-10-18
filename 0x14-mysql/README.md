@@ -1,5 +1,7 @@
 `https://www.devart.com/dbforge/mysql/how-to-install-mysql-on-ubuntu/`
+
 `https://medium.com/@estebandelahoz/setup-a-primary-replica-infrastructure-using-mysql-5bcab77c352`
+
 Task 0
 
 First things first, let’s get MySQL installed on both your web-01 and web-02 servers.
