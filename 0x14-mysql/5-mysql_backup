@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# Check if the MySQL password argument is provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <MySQL Password>"
+  exit 1
+fi
+
+# Define MySQL credentials
+DB_USER="root"
+DB_PASS="$1"
+
+# Get the current date in the required format (day-month-year)
+DATE=$(date +"%d-%m-%Y")
+
+# Define the backup file name
+BACKUP_FILE="backup.sql"
+
+# Create a MySQL dump for all databases and save it as "backup.sql"
+mysqldump -u $DB_USER -p$DB_PASS --all-databases > $BACKUP_FILE
+
+# Create a compressed archive with the specified format
+tar -czvf "$DATE.tar.gz" $BACKUP_FILE
+
+# Remove the temporary MySQL dump
+rm $BACKUP_FILE
+
+echo "Backup completed and saved as $DATE.tar.gz"
