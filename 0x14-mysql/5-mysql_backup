@@ -6,18 +6,8 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-# Define MySQL credentials
-DB_USER="root"
-DB_PASS="$1"
-
-# Get the current date in the required format (day-month-year)
-DATE=$(date +"%d-%m-%Y")
-
-# Define the backup file name
-BACKUP_FILE="backup.sql"
-
 # Create a MySQL dump for all databases and save it as "backup.sql"
-mysqldump -u $DB_USER -p$DB_PASS --all-databases > $BACKUP_FILE
+mysqldump -uroot -p"$1" --all-databases > backup.sql
 
 # Create a compressed archive with the specified format
-tar -czvf "$DATE.tar.gz" $BACKUP_FILE
+tar -czf $(date +%d-%m-%m).tar.gz backup.sql
