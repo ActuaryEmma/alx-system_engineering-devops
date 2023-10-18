@@ -21,8 +21,3 @@ mysqldump -u $DB_USER -p$DB_PASS --all-databases > $BACKUP_FILE
 
 # Create a compressed archive with the specified format
 tar -czvf "$DATE.tar.gz" $BACKUP_FILE
-
-# Remove the temporary MySQL dump
-rm $BACKUP_FILE
-
-echo "Backup completed and saved as $DATE.tar.gz"
