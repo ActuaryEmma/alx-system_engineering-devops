@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# write a Bash script that accepts one argument, the script should run the whoami command under the user passed as an argument, make sure to try your script by passing different users
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <your argument>"
+  exit 1
+fi
+result=$(sudo -u "$1" -i whoami)
+echo "$result"
