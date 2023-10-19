@@ -5,5 +5,5 @@ if [ "$#" -ne 1 ]; then
   echo "Usage: $0 <your argument>"
   exit 1
 fi
-result=$(sudo -u "$1" -i whoami)
+result=$(sudo -u "$1" whoami)
 echo "$result"
