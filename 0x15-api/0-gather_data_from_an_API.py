@@ -25,7 +25,7 @@ if __name__ == "__main__":
     # it is append title to completed list
     completed = [t['title'] for t in data2 if t['completed']]
     print("Employee {} is done with tasks({}/{}):".format(
-            data["username"], len(completed), len(data2)))
+            data["name"], len(completed), len(data2)))
     # return title list of completed tasks
     for c in completed:
         print("\t{}".format(c))
