@@ -19,28 +19,16 @@ if __name__ == "__main__":
         data = json.loads(f.read().decode('utf-8'))
     with urllib.request.urlopen(url2) as f:
         data2 = json.loads(f.read().decode('utf-8'))
+    json_file = f"{sys.argv[1]}.json"
 
-    # completed = [],, loop through t in data2 check if completed is True,
-    # it is append title to completed list
-    completed = [t['title'] for t in data2 if t['completed']]
+    tasks = []
 
-    # json_file = f"{sys.argv[1]}.json"
-    # header = ["userId", "username", "completed", "title"]
-
-	# with open(json_file, "w") as file:
-		# usrname = data["username"]
-        # Write the data rows
-		# for t in data2:
-        # json.dump({sys.argv[1]: [{"task": t['title'], "completed": t['completed'], "username": usrname}]})
-    completed_tasks = []
     for t in data2:
-        completed_tasks.append({
+        tasks.append({
             "task": t['title'],
             "completed": t['completed'],
             "username": data["username"]
         })
 
-    json_file = f"{sys.argv[1]}.json"
-
     with open(json_file, "w") as file:
-        json.dump(completed_tasks, file, indent=4)
+        json.dump({sys.argv[1]: tasks}, file)
