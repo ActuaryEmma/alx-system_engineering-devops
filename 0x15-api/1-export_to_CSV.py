@@ -25,13 +25,13 @@ if __name__ == "__main__":
     completed = [t['title'] for t in data2 if t['completed']]
 
     csv_file = f"{sys.argv[1]}.csv"
-    header = [ "userId","name","completed","title" ]
+    header = ["userId", "name", "completed", "title"]
 
     with open(csv_file, "w", newline="") as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         # Write the header row
         writer.writerow(header)
-        user_name = data["name"]
+        usrname = data["name"]
         # Write the data rows
-        for task in data2:
-            writer.writerow([sys.argv[1], user_name, task['completed'], task['title']])
+        for t in data2:
+            writer.writerow([sys.argv[1], usrname, t['completed'], t['title']])
