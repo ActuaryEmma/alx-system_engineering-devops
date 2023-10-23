@@ -31,7 +31,7 @@ if __name__ == "__main__":
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         # Write the header row
         writer.writerow(header)
-        usrname = data["name"]
+        usrname = data["username"]
         # Write the data rows
         for t in data2:
             writer.writerow([sys.argv[1], usrname, t['completed'], t['title']])
