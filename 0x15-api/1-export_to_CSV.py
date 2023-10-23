@@ -25,7 +25,7 @@ if __name__ == "__main__":
     completed = [t['title'] for t in data2 if t['completed']]
 
     csv_file = f"{sys.argv[1]}.csv"
-    header = ["userId", "name", "completed", "title"]
+    header = ["userId", "username", "completed", "title"]
 
     with open(csv_file, "w", newline="") as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
