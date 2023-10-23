@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-""" urllib.request - help in opening URLs mostly HTTP
-    urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None,
-    capath=None, cadefault=False, context=None)
-"""
-
-import urllib.request
-import sys
+"""urllib.request - help in opening URLs mostly HTTP"""
+# urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None,
+# capath=None, cadefault=False, context=None)
 import json
+import sys
+import urllib.request
+
+
 if len(sys.argv) != 2:
     print(f"Usage: {sys.argv[0]} <id>")
     sys.exit(1)
