@@ -17,18 +17,18 @@ if __name__ == "__main__":
     json_file = "todo_all_employees.json.json"
 
     user_tasks = {}
-    # iterate through each user
+    # iterate through each user and extracts username and ID
     for user in data:
         user_id = user['id']
-        username = user['name']
+        username = user['username']
         user_tasks[user_id] = []
 
         for task in data2:
             if task['userId'] == user_id:
                 user_tasks[user_id].append({
+                    "username": username,
                     "task": task['title'],
-                    "completed": task['completed'],
-                    "username": username
+                    "completed": task['completed']
                 })
 
     with open(json_file, "w") as file:
