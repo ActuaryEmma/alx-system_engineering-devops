@@ -9,6 +9,7 @@ import urllib.request
 if __name__ == "__main__":
     url = f"https://jsonplaceholder.typicode.com/users"
     url2 = f"https://jsonplaceholder.typicode.com/todos"
+    # open and fetch data
     with urllib.request.urlopen(url) as f:
         data = json.loads(f.read().decode('utf-8'))
     with urllib.request.urlopen(url2) as f:
@@ -16,9 +17,10 @@ if __name__ == "__main__":
     json_file = "todo_all_employees.json.json"
 
     user_tasks = {}
+    # iterate through each user
     for user in data:
         user_id = user['id']
-        username = user['username']
+        username = user['name']
         user_tasks[user_id] = []
 
         for task in data2:
