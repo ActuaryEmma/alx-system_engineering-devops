@@ -14,7 +14,7 @@ if __name__ == "__main__":
         data = json.loads(f.read().decode('utf-8'))
     with urllib.request.urlopen(url2) as f:
         data2 = json.loads(f.read().decode('utf-8'))
-    json_file = "todo_all_employees.json.json"
+    json_file = "todo_all_employees.json"
 
     user_tasks = {}
     # iterate through each user and extracts username and ID
