@@ -28,4 +28,4 @@ if __name__ == "__main__":
             data["name"], len(completed), len(data2)))
     # return title list of completed tasks
     for c in completed:
-        print("\t{}".format(c))
+        print("\t {}".format(c))
